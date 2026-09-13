@@ -17,6 +17,15 @@ baseurl: "/academic-homepage-nostalgia-1990s" # the subpath of your site, e.g. /
 
 # Build settings
 markdown: kramdown
+exclude:
+  - _design
+  - scripts
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - .bundle
 plugins:
   - jekyll-email-protect
 

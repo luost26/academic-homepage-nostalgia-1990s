@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "collected_on": "2026-09-13",
+  "purpose": "Unmodified pixel-grid font reconstructions used by the classic homepage variant.",
+  "license": "CC-BY-SA-3.0",
+  "author": "lou",
+  "modified": false,
+  "upstream_revision": "b1d7a907371bbe523d6f64e3af97f714fdbd6d6a",
+  "resources": [
+    {
+      "path": "ms_sans_serif.woff2",
+      "bytes": 6508,
+      "sha256": "11b5a68acb6b967d1faa5a3f58432028e9c9cada37c8778d9dcc7415dca73a32",
+      "url": "https://raw.githubusercontent.com/jdan/98.css/b1d7a907371bbe523d6f64e3af97f714fdbd6d6a/fonts/converted/ms_sans_serif.woff2",
+      "original_source": "https://fontstruct.com/fontstructions/show/1384746",
+      "notice": "font-regular-license.txt",
+      "use_status": "in-use-in-classic-variant"
+    },
+    {
+      "path": "ms_sans_serif_bold.woff2",
+      "bytes": 6264,
+      "sha256": "5f3fbc5790b315fc158b749078e7fd1d74e1f9b463f6b7266c1908cb82a450ae",
+      "url": "https://raw.githubusercontent.com/jdan/98.css/b1d7a907371bbe523d6f64e3af97f714fdbd6d6a/fonts/converted/ms_sans_serif_bold.woff2",
+      "original_source": "https://fontstruct.com/fontstructions/show/1384862",
+      "notice": "font-bold-license.txt",
+      "use_status": "in-use-in-classic-variant"
+    }
+  ]
+}

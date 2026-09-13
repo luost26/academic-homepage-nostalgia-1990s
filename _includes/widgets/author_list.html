@@ -38,9 +38,9 @@
     {%- endif -%}
     
     {%- if info['url'] -%}
-        <a class="text-body" target="_blank" href="{{ info['url'] }}">{{ display_name }}</a>{%- if forloop.index < authors.size -%}, {% endif -%}
+        <a target="_blank" rel="noopener noreferrer" href="{{ info['url'] }}">{{ display_name }}</a>{%- if forloop.index < authors.size -%}, {% endif -%}
     {%- else -%}
-        <span class="text-body">
+        <span>
             {{ display_name }}{%- if forloop.index < authors.size -%}, {% endif -%}
         </span>
     {%- endif -%}

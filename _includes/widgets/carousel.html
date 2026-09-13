@@ -1,31 +1,19 @@
-<div>
-    <div id="{{ include.id | slugify }}" class="carousel slide" data-ride="carousel">
+<div id="{{ include.id | slugify }}" class="carousel slide" data-interval="false" aria-label="Image collection">
+    <div class="carousel-inner">
+        {% for item in include.images %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{% endif %}
+            <div class="lazy always-load d-block" data-src="{{ item.src | relative_url }}" style="height: {{ include.height }};" role="img" aria-label="{% if item.title %}{{ item.title | escape }}{% else %}Collection image {{ forloop.index }}{% endif %}"></div>
+            {% if item.link %}</a>{% endif %}
+            {% if item.title or item.desc %}<div class="carousel-caption">{% if item.title %}<h3>{{ item.title }}</h3>{% endif %}{% if item.desc %}<p>{{ item.desc }}</p>{% endif %}</div>{% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="classic-carousel-controls">
+        <button class="classic-button" type="button" data-target="#{{ include.id | slugify }}" data-slide="prev" aria-label="Previous image">Previous</button>
         <div class="carousel-indicators">
-            {% for item in include.images %}
-            <button type="button" data-target="#{{ include.id | slugify }}" data-slide-to="{{ forloop.index0 }}" aria-label="Show slide {{ forloop.index }}" {% if forloop.index == 1 %}class="active"{% endif %}></button>
-            {% endfor %}
+            {% for item in include.images %}<button class="classic-button {% if forloop.first %}active{% endif %}" type="button" data-target="#{{ include.id | slugify }}" data-slide-to="{{ forloop.index0 }}" aria-label="Show slide {{ forloop.index }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ forloop.index }}</button>{% endfor %}
         </div>
-        <div class="carousel-inner" style="height: {{ include.height }};">
-            {% for item in include.images %}
-            <div class="carousel-item {% if forloop.index == 1 %}active{% endif %}">
-                {% if item.link %}<a href="{{ item.link }}" target="_blank">{% endif %}
-                <div class="lazy always-load d-block rounded-xl" data-src="{{ item.src | relative_url }}" style="height: {{ include.height }};">
-                </div>
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>{{ item.title }}</h5>
-                    <p>{{ item.desc }}</p>
-                </div>
-                {% if item.link %}</a>{% endif %}
-            </div>
-            {% endfor %}
-        </div>
-        <button class="carousel-control-prev" type="button" data-target="#{{ include.id | slugify }}" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-target="#{{ include.id | slugify }}" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </button>
+        <button class="classic-button" type="button" data-target="#{{ include.id | slugify }}" data-slide="next" aria-label="Next image">Next</button>
     </div>
 </div>

@@ -1,16 +1,7 @@
-<footer class="footer flex-shrink-0 border-top py-2 mt-5 bg-white small">
-    <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
-        <div class="row my-3">
-            <div class="col-6">
-                <div class="text-muted">
-                    <i>Last updated: {{ "now" | date: "%b %Y" }}</i>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="text-right text-muted">
-                    {{ site.data.display.footer_text }}
-                </div>
-            </div>
-        </div>
-    </div>
+<footer class="classic-footer">
+    <div class="classic-footer-row"><span>Last updated: {{ "now" | date: "%b %Y" }}</span><span>{{ site.data.display.footer_text }}</span></div>
+    <details class="classic-credits">
+        <summary>Artwork credits</summary>
+        <p>Windows 98 icons: <a href="https://win98icons.alexmeub.com/" target="_blank" rel="noopener noreferrer">Alex Meub's collection</a> · Pixel font: lou, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>, unmodified.</p>
+    </details>
 </footer>

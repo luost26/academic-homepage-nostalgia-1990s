@@ -1,9 +1,10 @@
 // aHR0cHM6Ly9naXRodWIuY29tL2x1b3N0MjYvYWNhZGVtaWMtaG9tZXBhZ2U=
 $(function () {
-    lazyLoadOptions = {
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var lazyLoadOptions = {
         scrollDirection: 'vertical',
-        effect: 'fadeIn',
-        effectTime: 300,
+        effect: reducedMotion ? 'show' : 'fadeIn',
+        effectTime: reducedMotion ? 0 : 300,
         placeholder: "",
         onError: function(element) {
             console.log('[lazyload] Error loading ' + element.data('src'));
@@ -26,6 +27,13 @@ $(function () {
 
     $('[data-toggle="tooltip"]').tooltip()
 
+    $('.carousel').on('slid.bs.carousel', function () {
+        $(this).find('[data-slide-to]').each(function () {
+            this.setAttribute('aria-pressed', this.classList.contains('active') ? 'true' : 'false');
+        });
+        if ($grid) $grid.masonry('layout');
+    });
+
     var $grid = $('.grid').masonry({
         "percentPosition": true,
         "itemSelector": ".grid-item",
@@ -35,6 +43,9 @@ $(function () {
     $grid.imagesLoaded().progress(function () {
         $grid.masonry('layout');
     });
+    if (document.fonts) {
+        document.fonts.ready.then(function () { $grid.masonry('layout'); });
+    }
 
     $(".lazy").on("load", function () {
         $grid.masonry('layout');

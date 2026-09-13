@@ -2,13 +2,15 @@
 layout: default
 title : Showcase
 navbar_title: Showcase
-container_class: container-xl
 ---
 
 {% assign cards_by_group = site.showcase | sort: "date" | reverse | where: "show", true | group_by_exp: "item", "item.group" %}
 
+<div class="classic-document classic-showcase">
+<h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/paint_file-2.png' | relative_url }}" alt="" width="32" height="32">Showcase</h1>
 {% for group in cards_by_group %}
-<h1>{{ group.name }}</h1>
+<section {% if group.name and group.name != '' %}aria-labelledby="showcase-{{ group.name | slugify }}"{% else %}aria-label="General showcase"{% endif %}>
+{% if group.name and group.name != '' %}<h2 id="showcase-{{ group.name | slugify }}">{{ group.name }}</h2>{% endif %}
 <div class="row grid mb-4">
     <div class="grid-sizer col-1"></div>
     {% for item in group.items %}
@@ -29,4 +31,6 @@ container_class: container-xl
     </div>
     {% endfor %}
 </div>
+</section>
 {% endfor %}
+</div>

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "collected_on": "2026-09-13",
+  "resources": [
+    {
+      "path": "resources/web-history/yahoo-1998.png",
+      "url": "https://www.webdesignmuseum.org/uploaded/timeline/yahoo/yahoo-1998.png",
+      "source_page": "https://www.webdesignmuseum.org/gallery/yahoo-in-1998",
+      "original_archive": "https://web.archive.org/web/19980630072557/http://www.yahoo.com/",
+      "category": "historical-web-screenshot",
+      "expected_type": "png",
+      "use_status": "reference-only-not-for-production",
+      "provenance": "1998 website artifact reproduced by Web Design Museum; screenshots remain copyrighted by their respective owners. Research only.",
+      "bytes": 36475,
+      "sha256": "52430cd29f8c7088a88288f522876b6dd5217c847bd3988f24ee1af19e766c99",
+      "width": 830,
+      "height": 789
+    },
+    {
+      "path": "resources/web-history/larry-page-homepage-1998.png",
+      "url": "https://www.webdesignmuseum.org/uploaded/fullscreen/larry-page-homepage-1998.png",
+      "source_page": "https://www.webdesignmuseum.org/gallery/larry-page-homepage-in-1998",
+      "original_archive": "https://web.archive.org/web/19981202114029/http://www-pcd.stanford.edu/~page/",
+      "category": "historical-web-screenshot",
+      "expected_type": "png",
+      "use_status": "reference-only-not-for-production",
+      "provenance": "1998 website artifact reproduced by Web Design Museum; screenshots remain copyrighted by their respective owners. Research only.",
+      "bytes": 80258,
+      "sha256": "3e230d1d157564238679586e74b68fb64f65036ba8a3a4cf185ee67e3d631a78",
+      "width": 830,
+      "height": 770
+    },
+    {
+      "path": "resources/web-history/sergey-brin-homepage-1998.png",
+      "url": "https://www.webdesignmuseum.org/uploaded/fullscreen/sergey-brin-homepage-1998.png",
+      "source_page": "https://www.webdesignmuseum.org/gallery/sergey-brin-homepage-in-1998",
+      "original_archive": "https://web.archive.org/web/19980418143602/http://www-db.stanford.edu/~sergey/",
+      "category": "historical-web-screenshot",
+      "expected_type": "png",
+      "use_status": "reference-only-not-for-production",
+      "provenance": "1998 website artifact reproduced by Web Design Museum; screenshots remain copyrighted by their respective owners. Research only.",
+      "bytes": 135622,
+      "sha256": "7c08d442bf78b19277b452591e6883511a70929c19da753ce988c3710a6ce1e7",
+      "width": 830,
+      "height": 3060
+    },
+    {
+      "path": "resources/web-history/google-1998.png",
+      "url": "https://www.webdesignmuseum.org/uploaded/timeline/google/google-1998.png",
+      "source_page": "https://www.webdesignmuseum.org/gallery/google-1998",
+      "original_archive": "https://web.archive.org/web/19981202230410/http://www.google.com",
+      "category": "historical-web-screenshot",
+      "expected_type": "png",
+      "use_status": "reference-only-not-for-production",
+      "provenance": "1998 website artifact reproduced by Web Design Museum; screenshots remain copyrighted by their respective owners. Research only.",
+      "bytes": 27935,
+      "sha256": "f535d5b0d1ad01047471933d99929311ec94f88eaa0d74a770a5d590209a8915",
+      "width": 830,
+      "height": 600
+    }
+  ]
+}

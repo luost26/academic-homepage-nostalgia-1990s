@@ -1,64 +1,48 @@
-# academic-homepage
+# academic-homepage — Nostalgia 1990s
 
-[![Preview](assets/images/etc/preview.png)](https://luost26.github.io/academic-homepage/)
+A late-1990s desktop-inspired variant of [academic-homepage](https://github.com/luost26/academic-homepage), a GitHub Pages (Jekyll) template for personal academic websites. It pairs the original template's profiles, publications, blog, and Showcase with Windows 95/98-style silver bevels, classic icons, and pixel-grid typography.
 
-[![pages-build-deployment](https://github.com/luost26/academic-homepage/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/luost26/academic-homepage/actions/workflows/pages/pages-build-deployment)
-[![Hits](https://hits.sh/github.com/luost26/academic-homepage.svg?view=today-total)](https://hits.sh/github.com/luost26/academic-homepage/)
-[![GitHub stars](https://img.shields.io/github/stars/luost26/academic-homepage)](https://github.com/luost26/academic-homepage)
-[![GitHub forks](https://img.shields.io/github/forks/luost26/academic-homepage)](https://github.com/luost26/academic-homepage/forks)
-<!--[![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fluost26.github.io%2Facademic-homepage)](https://validator.nu/?doc=https%3A%2F%2Fluost26.github.io%2Facademic-homepage)-->
+[Live demo](https://luost26.github.io/academic-homepage-nostalgia-1990s/) · [Main repository](https://github.com/luost26/academic-homepage)
 
-A GitHub Pages (Jekyll) template for personal academic website. Click [here](https://luost26.github.io/academic-homepage/) to see the demo.
+[![pages-build-deployment](https://github.com/luost26/academic-homepage-nostalgia-1990s/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/luost26/academic-homepage-nostalgia-1990s/actions/workflows/pages/pages-build-deployment)
+[![Hits](https://hits.sh/github.com/luost26/academic-homepage-nostalgia-1990s.svg?view=today-total)](https://hits.sh/github.com/luost26/academic-homepage-nostalgia-1990s/)
+[![GitHub stars](https://img.shields.io/github/stars/luost26/academic-homepage-nostalgia-1990s)](https://github.com/luost26/academic-homepage-nostalgia-1990s)
+[![GitHub forks](https://img.shields.io/github/forks/luost26/academic-homepage-nostalgia-1990s)](https://github.com/luost26/academic-homepage-nostalgia-1990s/forks)
 
-## Variants
+## Screenshots
 
-Explore alternative visual styles in their own repositories.
+### Homepage
 
-| Variant | Style | Preview | Links |
-| --- | --- | --- | --- |
-| Frutiger Aero | Vista-inspired frosted glass, glossy icons, and nature imagery. | <img src="assets/images/variants/frutiger-aero.jpg" alt="Frutiger Aero homepage screenshot" width="320"> | [Repository](https://github.com/luost26/academic-homepage-frutiger-aero) · [Live demo](https://luost26.github.io/academic-homepage-frutiger-aero/) |
+[![Nostalgia 1990s homepage with a silver beveled frame, navy-blue masthead, recessed portrait, and tree section icon](assets/images/screenshots/homepage.jpg)](https://luost26.github.io/academic-homepage-nostalgia-1990s/)
 
-## User Community
+### Publications
 
-[🏡](https://luost.me/)
-[:star:](https://cch1999.github.io/)
-[:star:](https://kyrrego.github.io/)
-[:star:](https://ced3-han.github.io/)
-[:star:](https://lihengchen.com/)
-[:star:](https://hpwang-whu.github.io/)
-[:star:](https://zhang-yingyi.github.io/)
-[:star:](https://wby24.github.io/)
-[:star:](https://pengfeixu.com/)
-[:star:](https://boqiuphd.github.io/)
-[:star:](https://www.huabing.li/)
-[:star:](https://xiecuiying.github.io/)
-[:star:](https://hannyang.github.io/)
-[:star:](https://king-play.github.io/)
-[🤖](https://andrewcwlee.github.io)
-[:star:](https://laiyao1.github.io)
-[🌜](https://tmsultan.github.io)
-[🚀](https://zaxguo.github.io)
-[:gemini:](https://hongyang-du.github.io)
-[:star:](https://thuanz123.github.io)
-[🧬](https://gdalba.github.io/)
-[:star:](https://yhhan.com/)
-[🌔](https://chen-huaneng.github.io/academic)
-[:star:](https://jwklee.github.io/)
-[😼](https://onethousandwu.com/)
-[🔬](https://kwen-chen.github.io/)
-[🧑‍🔬](https://shengxiang-lin.github.io/)
-[🗣️](https://henry-h22.github.io/)
-[🍠](https://xingyuliuxyl.com/)
+[![Nostalgia 1990s publications archive with a recessed cover image, compact paper links, and classic year navigation](assets/images/screenshots/publications.jpg)](https://luost26.github.io/academic-homepage-nostalgia-1990s/publications)
 
-:hugs: Feel free to tell us if you are using this template for your website by creating an issue [here](https://github.com/luost26/academic-homepage/issues/new?assignees=&labels=&projects=&template=user-report.md&title=I+am+using+this+template%21).
+## Nostalgia 1990s theme
 
-### Acknowledgements
+This version uses a cohesive academic desktop-companion design: a teal backdrop, silver beveled frame, navy-to-blue identity masthead, attached navigation tabs, and inset white reading surfaces. Native-size Windows 98 icons and locally hosted pixel-grid fonts create the nostalgic feel without fake window controls, menus, or a taskbar.
 
-The improvements of this template have been inspired by the customizations and feedbacks from the following users:
-- 😼 [onethousandwu.com](https://onethousandwu.com/): increased corner radius [[Repo]](https://github.com/oneThousand1000/oneThousand1000.github.io)
-- :star: [shiwonkim.github.io](https://shiwonkim.github.io/): two-column main page layout [[Repo]](https://github.com/shiwonkim/shiwonkim.github.io)
-- :star: [yqxie99.github.io](https://yqxie99.github.io/): blog feature [[Repo]](https://github.com/YQXie99/YQXie99.github.io/tree/feat/add_blog_page)
-- :star: [kwen-chen.github.io](https://kwen-chen.github.io/): blog feature [[Repo]](https://github.com/Kwen-Chen/Kwen-Chen.github.io)
+Personalize the same YAML files in `_data/` and Markdown collections as before. The homepage, publication and blog archives, blog articles, Showcase, and the error page share `_layouts/default.html` and the same 1280px maximum frame width. This variant has one homepage layout.
+
+- Change the classic palette, spacing, borders, and typography through the CSS variables and theme rules in `assets/css/global.css`. `--classic-text-size` keeps reading text and button labels consistent at 11px.
+- Blog reading styles and the contents sidebar are in `assets/css/blog.css`.
+- Shared theme helpers are in `_includes/classic/`. Navigation entries remain in `_data/navigation.yml`.
+- Section headings use genuine 32×32 PNG icons from `assets/images/classic/icons/32/`; Contact & profiles use genuine 16×16 variants from `assets/images/classic/icons/16/`. Both sizes are displayed one-to-one, without downscaling. About me uses the tree icon.
+- Publication images and generated bubble covers share a recessed bevel. Missing covers use deterministic, title-seeded, dithered bubble visual hashes in `assets/js/bubble_visual_hash.js`; publication-entry link buttons use compact 24px desktop heights.
+- The header scrolls with the page, and section links use native browser navigation. Active year links are handled by `assets/js/classic.js`. The theme includes visible keyboard focus, larger touch targets, reduced-motion styles, and print styles.
+- Artwork credits are collapsed by default in the footer. Icon provenance is recorded in [the icon manifest](assets/images/classic/manifest.json), and font sources and licenses are bundled in [the font kit](assets/fonts/classic/NOTICE.md). Design research and implementation evidence are in [the design notes](_design/nostalgia-1990s/IMPLEMENTATION.md); `_design/` and `scripts/` are excluded from the website.
+
+Run `bundle exec jekyll serve` to preview the theme locally, then open the displayed URL with the configured `/academic-homepage-nostalgia-1990s/` subpath. Build and verify with `bundle exec jekyll build`, `python3 scripts/verify_classic.py _site`, and `node scripts/test_visual_hash.js`. Keep the artwork credits and license/source links when reusing the downloaded assets.
+
+## Acknowledgements
+
+The Nostalgia 1990s theme uses artwork and typography from the following creators and projects:
+
+- [Windows 98 Icon Viewer](https://win98icons.alexmeub.com/), hosted by Alex Meub — the user-selected classic icon collection. The native 16×16 and 32×32 PNG variants were extracted unchanged from the collection's official archive. No explicit artwork reuse license was found on the viewer page; no open-source icon license is claimed. See [the icon provenance notice](assets/images/classic/NOTICE.md) and [manifest](assets/images/classic/manifest.json).
+- MS Sans Serif pixel-grid reconstructions by lou — [regular](https://fontstruct.com/fontstructions/show/1384746) and [bold](https://fontstruct.com/fontstructions/show/1384862), distributed unmodified under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). The WOFF2 files were obtained from [98.css](https://github.com/jdan/98.css); they are reconstructions, not original Microsoft font binaries. See the [font notice](assets/fonts/classic/NOTICE.md) and bundled [regular](assets/fonts/classic/font-regular-license.txt) / [bold](assets/fonts/classic/font-bold-license.txt) license notices.
+
+Original template content and image credits are retained. The bubble visual hash keeps the original MD5 implementation credits to Paul Johnston and Greg Holt in its source. Historical references and unused research assets have their own source records in [the research resource guide](_design/nostalgia-1990s/RESOURCES.md). Keep these credits and the bundled license/source files when reusing the assets.
 
 ## Need Help?
 
@@ -94,4 +78,3 @@ If you run into **any** issues while using this template, or have suggestions fo
 2. Go to the repository settings and enable GitHub Pages. Detailed instructions can be found [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site).
 
 3. Navigate to your created website, and follow the instructions displayed on the homepage (if any) to finalize the setup.
-

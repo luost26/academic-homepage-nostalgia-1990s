@@ -45,78 +45,92 @@ function md5(inputString) {
 }
 
 
-// This script is inspired by https://github.com/dakridge/identicon
+// Classic pixel-bubble renderer, retaining the original MD5 visual seed.
+(function () {
+    'use strict';
+    var WIDTH = 150;
+    var HEIGHT = 100;
+    var PIXEL = 2;
+    var PALETTES = [
+        {fill: '#000080', light: '#1084d0', dark: '#000040'},
+        {fill: '#008080', light: '#00ffff', dark: '#004040'},
+        {fill: '#800080', light: '#ff00ff', dark: '#400040'},
+        {fill: '#808000', light: '#ffff00', dark: '#404000'}
+    ];
 
-createHashGroupForString = function (str) {
-    var hashGroup = [];
-    var hash = md5(str);
-    for (var i = 0; i < hash.length; i += 1) {
-        var byte = parseInt(hash[i], 16);
-        hashGroup.push(byte);
-    }
-    return hashGroup;
-}
-
-createBubbleInfo = function (hashGroup, n, w, h) {
-    var maxN = hashGroup.length / 2;
-    n = n < maxN ? n : maxN;
-    var wh = w < h ? w : h;
-    var scaleX = function (v) { return (w / 16) * v; };
-    var scaleY = function (v) { return (h / 16) * v; };
-    var radius = function (v) { var min = 10; var max = wh / 2; return min + ((v / 16) * (max - min)); };
-    var color = function (i) {
-        var c = [
-            "#1f77b4", "#aec7e8",  // blue
-            "#ff7f0e", "#ffbb78",  // orange
-            "#2ca02c", "#98df8a",  // green
-            "#d62728", "#ff9896",  // red
-            "#9467bd", "#c5b0d5",  // purple
-            "#8c564b", "#c49c94",  // brown
-            // "#e377c2", "#f7b6d2",  // pink
-            // "#7f7f7f", "#c7c7c7",  // gray
-            "#bcbd22", "#dbdb8d",  // yellow
-            "#17becf", "#9edae5",  // cyan
-        ];
-        return c[i % c.length];
-    };
-
-    var bubbleInfo = [];
-    for (var i = 0; i < n; i++) {
-        var xRel = hashGroup[2 * i];
-        var yRel = hashGroup[2 * i + 1];
-        bubbleInfo.push({
-            x: scaleX(xRel),
-            y: scaleY(yRel),
-            radius: radius(hashGroup[(xRel * yRel) % hashGroup.length]),
-            color: color(xRel + yRel)
+    // A visual fingerprint only: no randomness, animation, or network requests.
+    function buildVisualHash(seed) {
+        var hash = md5(String(seed));
+        var digits = hash.split('').map(function (digit) { return parseInt(digit, 16); });
+        var layers = [{pixels: [{x: 0, y: 0, width: WIDTH, height: HEIGHT, fill: '#dfdfdf'}]}];
+        var dots = [];
+        for (var y = 2; y < HEIGHT; y += 10) {
+            for (var x = 2; x < WIDTH; x += 10) dots.push({x: x, y: y, width: PIXEL, height: PIXEL, fill: '#c0c0c0'});
+        }
+        layers.push({pixels: dots});
+        var bubbles = [];
+        for (var i = 0; i < 6; i++) {
+            bubbles.push({
+                x: 14 + digits[i * 2] * 8,
+                y: 12 + digits[i * 2 + 1] * 4,
+                radius: 10 + digits[14 + i] * 2,
+                palette: PALETTES[digits[22 + i] % PALETTES.length]
+            });
+        }
+        bubbles.sort(function (a, b) { return b.radius - a.radius; });
+        bubbles.forEach(function (bubble) {
+            var shadow = [];
+            var pixels = [];
+            var radius = bubble.radius;
+            function inside(dx, dy) { return dx * dx + dy * dy <= radius * radius; }
+            function add(target, x, y, fill) {
+                if (x < 0 || y < 0 || x + PIXEL > WIDTH || y + PIXEL > HEIGHT) return;
+                target.push({x: x, y: y, width: PIXEL, height: PIXEL, fill: fill});
+            }
+            for (var dy = -radius; dy <= radius; dy += PIXEL) {
+                for (var dx = -radius; dx <= radius; dx += PIXEL) {
+                    if (!inside(dx + 1, dy + 1)) continue;
+                    var edge = !inside(dx - 1, dy + 1) || !inside(dx + 3, dy + 1) ||
+                        !inside(dx + 1, dy - 1) || !inside(dx + 1, dy + 3);
+                    var checker = ((dx + dy + radius * 2) / PIXEL) % 2 === 0;
+                    var fill = bubble.palette.fill;
+                    if (edge) fill = bubble.palette.dark;
+                    else if (dx + dy < -radius * 0.6) fill = checker ? '#ffffff' : bubble.palette.light;
+                    else if (dx + dy < 0) fill = checker ? bubble.palette.light : bubble.palette.fill;
+                    else if (dx + dy > radius * 0.6) fill = checker ? bubble.palette.dark : bubble.palette.fill;
+                    add(shadow, bubble.x + dx + PIXEL, bubble.y + dy + PIXEL, '#808080');
+                    add(pixels, bubble.x + dx, bubble.y + dy, fill);
+                }
+            }
+            layers.push({pixels: shadow}, {pixels: pixels});
         });
+        return {width: WIDTH, height: HEIGHT, fingerprint: hash, layers: layers};
     }
-    return bubbleInfo;
-}
 
-
-drawBubble = function (svg, bubbleInfo) {
-    //  Sort bubbles by radius in descending order
-    bubbleInfo.sort(function (a, b) {
-        return b.radius - a.radius;
-    });
-    for (var i = 0; i < bubbleInfo.length; i++) {
-        var bubble = bubbleInfo[i];
-        var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        circle.setAttribute("cx", bubble.x);
-        circle.setAttribute("cy", bubble.y);
-        circle.setAttribute("r", bubble.radius);
-        circle.setAttribute("fill", bubble.color);
-        circle.setAttribute("fill-opacity", 0.75);
-        svg.appendChild(circle);
+    function render(svg) {
+        var model = buildVisualHash(svg.getAttribute('data-bubble-visual-hash') || 'publication');
+        var namespace = 'http://www.w3.org/2000/svg';
+        var fragment = document.createDocumentFragment();
+        // Merge same-color pixels within each layer, preserving overlap order.
+        // A cover has a few dozen paths, not thousands of DOM pixel elements.
+        model.layers.forEach(function (layer) {
+            var colors = {};
+            layer.pixels.forEach(function (pixel) {
+                if (!colors[pixel.fill]) colors[pixel.fill] = [];
+                colors[pixel.fill].push('M' + pixel.x + ' ' + pixel.y + 'h' + pixel.width + 'v' + pixel.height + 'h-' + pixel.width + 'z');
+            });
+            Object.keys(colors).forEach(function (fill) {
+                var path = document.createElementNS(namespace, 'path');
+                path.setAttribute('fill', fill);
+                path.setAttribute('d', colors[fill].join(''));
+                fragment.appendChild(path);
+            });
+        });
+        svg.replaceChildren(fragment);
+        svg.setAttribute('data-visual-hash-rendered', model.fingerprint);
     }
-}
 
-var canvases = document.querySelectorAll(".bubble-visual-hash");
-canvases.forEach(function (canvas) {
-    var hash = canvas.getAttribute("data-bubble-visual-hash");
-    var width = canvas.viewBox.baseVal.width;
-    var height = canvas.viewBox.baseVal.height;
-    var bubbleInfo = createBubbleInfo(createHashGroupForString(hash), 8, width, height);
-    drawBubble(canvas, bubbleInfo);
-});
+    if (typeof module !== 'undefined' && module.exports) module.exports = {buildVisualHash: buildVisualHash};
+    if (typeof document === 'undefined') return;
+    document.querySelectorAll('.bubble-visual-hash').forEach(render);
+})();
