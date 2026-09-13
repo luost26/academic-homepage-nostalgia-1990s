@@ -29,6 +29,10 @@ settings changes are part of this handoff.
 - Footer artwork/font attribution is collapsed by default behind an accessible
   "Artwork credits" disclosure, matching the Aero variant's behavior. The
   academic-homepage template link is text-only, as requested.
+  Credits also name 98.css by Jordan Scales as a component reference/font-file
+  source, distinguish its MIT code license from the fonts' CC BY-SA 3.0 terms,
+  and credit the retained MD5 seed code to Paul Johnston and Greg Holt. No
+  third-party Windows 98 styling stylesheet or JavaScript library is loaded.
 - Inset profile/portrait rail, left-aligned beveled contact/profile/CV links
   with classic icons beside their 11px labels. Email uses only a single-line
   address, with no "Email" prefix; contact links do not use the help-book icon.

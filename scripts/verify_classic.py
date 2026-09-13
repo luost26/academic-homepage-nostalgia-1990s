@@ -30,6 +30,8 @@ class Page(HTMLParser):
         self.visual_hashes = []
         self.credit_details = []
         self.footer_icons = []
+        self.footer_links = []
+        self.footer_text = []
         self.in_footer = False
         self.feed(source)
 
@@ -44,6 +46,8 @@ class Page(HTMLParser):
             self.credit_details.append(attrs)
         if self.in_footer and tag == 'i':
             self.footer_icons.append(attrs)
+        if self.in_footer and tag == 'a':
+            self.footer_links.append(attrs.get('href', ''))
         if attrs.get('id'):
             self.ids[attrs['id']] += 1
         for key in ('href', 'src', 'data-src'):
@@ -57,6 +61,10 @@ class Page(HTMLParser):
             self.in_nav = True
         if self.in_nav and tag == 'a':
             self.navigation.append(attrs)
+
+    def handle_data(self, data):
+        if self.in_footer:
+            self.footer_text.append(data)
 
     def handle_endtag(self, tag):
         if tag == 'nav':
@@ -149,6 +157,11 @@ def main():
         require(not page.classes['fixed-top'], f'Fixed header: {path}')
         require(len(page.credit_details) == 1 and 'open' not in page.credit_details[0], f'Artwork credits must be collapsed: {path}')
         require(not page.footer_icons, f'Footer icon should be removed: {path}')
+        require('https://github.com/jdan/98.css' in page.footer_links, f'Missing 98.css reference credit: {path}')
+        require('https://github.com/jdan/98.css/blob/b1d7a907371bbe523d6f64e3af97f714fdbd6d6a/LICENSE' in page.footer_links, f'Missing 98.css code license credit: {path}')
+        require('https://creativecommons.org/licenses/by-sa/3.0/' in page.footer_links, f'Missing separate pixel font license: {path}')
+        footer_text = ''.join(page.footer_text)
+        require('Paul Johnston' in footer_text and 'Greg Holt' in footer_text, f'Missing MD5 seed implementation credit: {path}')
         require(page.classes['classic-contact-button'] == page.classes['classic-contact-icon'] == page.classes['classic-contact-label'], f'Contact button must have an icon and label: {path}')
         for cover in page.visual_hashes:
             require(cover.get('viewbox') == '0 0 150 100' and cover.get('shape-rendering') == 'crispEdges', 'Visual hash must use the classic pixel canvas')
