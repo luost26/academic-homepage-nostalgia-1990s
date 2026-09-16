@@ -27,7 +27,7 @@
 .blog-content .token.operator, .blog-content .token.entity, .blog-content .token.url { color: #161616; background: none; }
 .blog-content .katex-display { margin: 24px 0; }
 .blog-toc-sidebar { min-width: 0; }
-.blog-toc-nav { padding: 12px; border: 2px solid; border-color: #808080 #fff #fff #808080; font-size: 11px; }
+.blog-toc-nav { padding: 12px; border: 2px solid; border-color: #808080 #fff #fff #808080; font-size: var(--classic-text-size); }
 .blog-toc-title { color: #161616; font-weight: 700; cursor: pointer; }
 .blog-toc-list { list-style: none; margin: 16px 0 0; padding: 0; }
 .blog-toc-list li { margin: 9px 0; }

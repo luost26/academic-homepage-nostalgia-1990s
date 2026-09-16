@@ -100,10 +100,10 @@ def asset_integrity(root):
                 require(data[:4] == b'wOF2', 'Invalid WOFF2')
                 require((folder / entry['notice']).is_file(), f"Missing font manifest notice: {entry['notice']}")
             checked += 1
-    for name in ('font-regular-license.txt', 'font-bold-license.txt', 'NOTICE.md'):
+    for name in ('font-regular-license.txt', 'font-bold-license.txt', 'W95FA-OFL.txt', 'NOTICE.md'):
         require((root / 'assets/fonts/classic' / name).is_file(), f'Missing font attribution: {name}')
     require(icon_sizes == {(48, 48): 8, (32, 32): 5, (16, 16): 7}, f'Unexpected native icon inventory: {icon_sizes}')
-    require(checked == 22, f'Expected twenty icons and two fonts, got {checked}')
+    require(checked == 23, f'Expected twenty icons and three fonts, got {checked}')
     return checked
 
 

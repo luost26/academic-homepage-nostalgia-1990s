@@ -1,11 +1,8 @@
 {
   "schema_version": 1,
-  "collected_on": "2026-09-13",
-  "purpose": "Unmodified pixel-grid font reconstructions used by the classic homepage variant.",
-  "license": "CC-BY-SA-3.0",
-  "author": "lou",
+  "collected_on": "2026-09-15",
+  "purpose": "W95FA preview font with the earlier Lou font files retained for comparison.",
   "modified": false,
-  "upstream_revision": "b1d7a907371bbe523d6f64e3af97f714fdbd6d6a",
   "resources": [
     {
       "path": "ms_sans_serif.woff2",
@@ -14,7 +11,9 @@
       "url": "https://raw.githubusercontent.com/jdan/98.css/b1d7a907371bbe523d6f64e3af97f714fdbd6d6a/fonts/converted/ms_sans_serif.woff2",
       "original_source": "https://fontstruct.com/fontstructions/show/1384746",
       "notice": "font-regular-license.txt",
-      "use_status": "in-use-in-classic-variant"
+      "author": "lou",
+      "license": "CC-BY-SA-3.0",
+      "use_status": "retained-alternative"
     },
     {
       "path": "ms_sans_serif_bold.woff2",
@@ -23,6 +22,19 @@
       "url": "https://raw.githubusercontent.com/jdan/98.css/b1d7a907371bbe523d6f64e3af97f714fdbd6d6a/fonts/converted/ms_sans_serif_bold.woff2",
       "original_source": "https://fontstruct.com/fontstructions/show/1384862",
       "notice": "font-bold-license.txt",
+      "author": "lou",
+      "license": "CC-BY-SA-3.0",
+      "use_status": "retained-alternative"
+    },
+    {
+      "path": "w95fa.woff2",
+      "bytes": 7880,
+      "sha256": "d81cbd6c15b9695e614fe1674bc1f43fa79c820afd0cd4acf49955d065e71644",
+      "url": "https://dl.dafont.com/dl/?f=w95fa",
+      "original_source": "https://www.dafont.com/w95fa.font",
+      "notice": "W95FA-OFL.txt",
+      "author": "MadeByArne",
+      "license": "OFL-1.1",
       "use_status": "in-use-in-classic-variant"
     }
   ]

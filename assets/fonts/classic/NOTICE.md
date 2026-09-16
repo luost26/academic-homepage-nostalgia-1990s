@@ -1,4 +1,15 @@
-# MS Sans Serif pixel-grid reconstruction
+# Classic theme font kit
+
+The active preview font is W95FA, a Windows 95-style recreation distributed
+with its WOFF2 file and SIL Open Font License 1.1 notice, unmodified.
+
+- Source: https://www.dafont.com/w95fa.font
+- Archive: https://dl.dafont.com/dl/?f=w95fa
+- Bundled license: W95FA-OFL.txt
+- The archive has one regular face. Browsers synthesize bold text in the theme.
+
+The earlier MS Sans Serif pixel-grid reconstructions are retained as an
+alternative; they are not loaded by the current theme.
 
 Regular and bold FontStructions by lou, distributed unmodified.
 
