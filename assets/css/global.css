@@ -2,7 +2,8 @@
 .classic-root { scrollbar-gutter: stable; }
 @font-face { font-family: "Classic Pixel"; src: url("../fonts/classic/ms_sans_serif.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Classic Pixel"; src: url("../fonts/classic/ms_sans_serif_bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
-.classic-site { --classic-silver: #c0c0c0; --classic-text-size: 11px; margin: 0; padding: 24px; color: #161616; background: #008080; font: 400 var(--classic-text-size)/1.6 "Classic Pixel", Arial, sans-serif; overflow-wrap: anywhere; }
+/* Cursor79.cur from https://www.rw-designer.com/cursor-detail/128661 (unmodified embed code). */
+.classic-site { --classic-silver: #c0c0c0; --classic-text-size: 11px; margin: 0; padding: 24px; color: #161616; background: #008080; font: 400 var(--classic-text-size)/1.6 "Classic Pixel", Arial, sans-serif; overflow-wrap: anywhere; cursor: url("data:application/octet-stream;base64,AAACAAEAICAAAAoACgAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAwAAAAMAAAAGAAAABgAAAAwAAAEMAAABmAAAAdgAAAH4AAAB/wAAAf4AAAH8AAAB+AAAAfAAAAHgAAABwAAAAYAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////z////4f///+H////D///3w///84f///GH///wD///8A////AA///wAf//8AP///AH///wD///8B////A////wf///8P////H////z////9////////////////////////////////////////////////////////8="), auto; }
 .classic-site *, .classic-site *::before, .classic-site *::after { box-sizing: border-box; }
 .classic-frame { width: 100%; max-width: 1280px; margin: 0 auto; padding: 10px; background: var(--classic-silver); border: 2px solid; border-color: #fff #111 #111 #fff; box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf, 4px 4px 0 #005f5f; }
 .classic-main { padding: 20px 6px 6px; min-width: 0; }
@@ -17,7 +18,8 @@
 .classic-site a:visited { color: #660099; }
 .classic-site .classic-site-name:visited { color: #fff; }
 .classic-site .classic-tab:visited, .classic-site .classic-button:visited { color: #161616; }
-.classic-site a:hover { text-decoration-thickness: 2px; }
+/* Cursor107.cur from https://www.rw-designer.com/cursor-detail/128675 (unmodified embed code). */
+.classic-site a:hover { text-decoration-thickness: 2px; cursor: url("data:application/octet-stream;base64,AAACAAEAICAAAAoACgAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAB/gAAAf4AAAP/AAAD/wAAB/8AAAf/gAAP/4AAC/+AABv/gAA7/4AAM/2AAANtgAADbQAAA2wAAANgAAADAAAAAwAAAAMAAAADAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///////AD///wA///8AP//+AB///gAf//wAH//8AA//+AAP//gAD//wAA//4AAP/+AAD//iAA///gAf//4AP//+AP///gf///4f///+H////h////4f////P//////////////////////////////////////////////////8="), pointer; }
 .classic-site :focus-visible { outline: 2px dotted #000080; outline-offset: 3px; }
 .classic-masthead :focus-visible { outline-color: #fff; }
 .classic-site ::selection { color: #fff; background: #000080; }
