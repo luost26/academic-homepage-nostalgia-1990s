@@ -215,6 +215,11 @@ def main():
         require(not (root / forbidden).exists(), f'Research/tool output published: {forbidden}')
     for css in ('global.css', 'blog.css'):
         source = (root / 'assets/css' / css).read_text()
+        if css == 'global.css':
+            require('.classic-site a.badge-info:visited, .classic-site a.badge-success:visited { color: #fff; }' in source,
+                    'Visited links on dark citation/status badges must remain white')
+            require('.classic-site a.badge-info:visited, .classic-site a.badge-success:visited { color: #000; }' in source,
+                    'Printed citation/status badges must remain dark on a white background')
         for value in re.findall(r'url\([\"\x27]?([^\)\"\x27]+)', source):
             resolve(value, root / 'assets/css' / css, root, baseurl)
     unchanged = ['_data/profile.yml', '_data/authors.yml', '_posts', '_news', '_publications', '_showcase', 'assets/images/photos', 'assets/images/covers', 'assets/images/badges']

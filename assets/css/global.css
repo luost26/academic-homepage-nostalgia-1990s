@@ -103,6 +103,7 @@
 .classic-site .badge { border-radius: 0; font-size: 11px; line-height: 1.6; white-space: normal; }
 .classic-site .badge-info { color: #fff; background: #000080; }
 .classic-site .badge-success { color: #fff; background: #006000; }
+.classic-site a.badge-info:visited, .classic-site a.badge-success:visited { color: #fff; }
 .classic-site mark { color: #161616; background: #ffffcc; }
 .classic-site img { max-width: 100%; }
 .classic-site pre, .classic-site code, .classic-site kbd { font-family: "Courier New", monospace; font-size: var(--classic-text-size); }
@@ -184,6 +185,7 @@
     .classic-site .classic-button { border: 0; box-shadow: none; background: none; padding: 0; font: inherit; }
     .classic-site a, .classic-site a:visited { color: #000; }
     .classic-site .badge { color: #000; background: none; border: 1px solid #808080; }
+    .classic-site a.badge-info:visited, .classic-site a.badge-success:visited { color: #000; }
     .classic-site pre { white-space: pre-wrap; background: #fff; border: 0; }
     .classic-publication { break-inside: avoid; }
 }
